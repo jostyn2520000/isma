@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+#audioPlayer {
+  display: none;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* Agregar transición suave */
+}
+
+.change-image {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.change-image:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.title {
+  color: #ff1493;
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.3s;
+  font-family: "Dancing Script", cursive; /* Aquí aplicamos la fuente */
+}
+
+.title:hover {
+  transform: scale(1.1);
+}
+
+.message {
+  text-align: center;
+  color: #ccc;
+  margin: 20px 0;
+  line-height: 1.5;
+}
+
+.counters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.counter {
+  text-align: center;
+}
+
+.counter-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.counter-label {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.date {
+  text-align: center;
+  color: #666;
+  margin: 20px 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.action-button:hover {
+  background: #333;
+  transform: scale(1.2);
+}
+
+.heart {
+  position: absolute;
+  color: red;
+  animation: falling linear infinite;
+}
+
+@keyframes falling {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}

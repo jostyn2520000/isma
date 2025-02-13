@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.surprise-button {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: beat 1.2s infinite alternate ease-in-out;
+}
+
+.heart svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(196, 30, 58, 0.3));
+}
+
+.heart path {
+  fill: #c41e3a;
+  transition: fill 0.3s ease;
+}
+
+.heart-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.surprise-button:hover .heart path {
+  fill: #ff1744;
+}
+
+.surprise-button:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 30px rgba(196, 30, 58, 0.4));
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: none;
+  z-index: 999;
+}
+
+.floating-heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  animation: float 8s ease-in-out infinite;
+  opacity: 0;
+}
+
+.floating-heart svg path {
+  fill: #ff1744;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.jump {
+  animation: jumpAnimation 0.5s ease-out;
+}
+
+.jump-click {
+  animation: jumpClickAnimation 0.4s ease-in-out;
+}
+
+@keyframes jumpAnimation {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+  70% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes jumpClickAnimation {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    transform: translateY(-8px) scale(1.1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.2);
+  }
+  70% {
+    transform: translateY(-8px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #c41e3a;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.8s ease;
+  z-index: 1000;
+  display: none;
+}
+
+.page-transition.active {
+  transform: scale(2);
+  display: block;
+}
+
+.loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  z-index: 1001;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-circle {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #222;
+  border-top: 5px solid #c41e3a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader.active {
+  display: flex;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

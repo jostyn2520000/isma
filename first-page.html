@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestra Historia</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div class="image-container">
+        <section class="slider-section">
+          <img src="assets/pareja1.jpeg" alt="Pareja" id="couple-image" />
+        </section>
+        <button class="change-image" onclick="changeImage()">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <path d="M21 15l-5-5L5 21"></path>
+          </svg>
+        </button>
+      </div>
+
+      <h1 class="title" onclick="toggleHearts()">Geovanna & Ismael</h1>
+
+      <p class="message">
+        Amor, quiero que sepas lo importante que eres para mí. Sé que no siempre
+        las cosas son fáciles, pero estar a tu lado hace que todo valga la pena.
+        Te admiro mucho y todo el esfuerzo que has hecho. Estoy aquí, apoyándote
+        y creyendo en nosotros siempre. ¡Te amo muchísimo!❤️
+      </p>
+
+      <div class="counters" id="counters"></div>
+      <div class="date">Desde el 22 de diciembre de 2023</div>
+
+      <div class="actions">
+        <button class="action-button" onclick="toggleMusic()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </button>
+        <button class="action-button" onclick="toggleMessage()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Reproductor de música -->
+      <audio id="audioPlayer" controls>
+        <source src="assets/tu-cancion.mp3" type="audio/mp3" />
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
